@@ -29,6 +29,7 @@ class Contato(models.Model):
         on_delete=models.DO_NOTHING
 
     )
+    mostrar = models.BooleanField(default=True)
 
 
     def __str__(self):

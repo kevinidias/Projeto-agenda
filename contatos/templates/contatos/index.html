@@ -14,14 +14,16 @@
           </thead>
           <tbody>
           {% for contato in contatos %}
-            <tr>
-              <td>
-                <a href="{% url 'detalhes_contato' contato.id %}">{{ contato.nome }}</a>
-              </td>
-              <td>{{ contato.sobrenome }}</td>
-              <td>{{ contato.telefone }}</td>
-              <td>{{ contato.categoria_fk }}</td>
-            </tr>
+            {% if contato.mostrar %}
+              <tr>
+                <td>
+                  <a href="{% url 'detalhes_contato' contato.id %}">{{ contato.nome }}</a>
+                </td>
+                <td>{{ contato.sobrenome }}</td>
+                <td>{{ contato.telefone }}</td>
+                <td>{{ contato.categoria_fk }}</td>
+              </tr>
+            {% endif %}
           {% endfor %}
           </tbody>
         </table>
